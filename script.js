@@ -22,4 +22,10 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 // initialize buttons
 
-button1.onclick=goStore;
+button1.onclick = goStore;
+button2.onclick = goCave;
+button3.onclick = fightDragon;
+
+function goStore() {
+    
+}
