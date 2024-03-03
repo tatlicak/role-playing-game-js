@@ -286,8 +286,14 @@ function attack() {
     health -= getMonsterAttackValue(monsters[fighting].level);
     if(isMonsterHit()) {
 
-    }
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+        monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+    } else {
+
+        text.innerText += " You miss."
+
+      }
+    
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
 
@@ -305,6 +311,11 @@ function attack() {
             defeatMonster()
         }
     } 
+}
+
+function isMonsterHit() {
+
+    return Math.random() > 0.2
 }
 
 
@@ -353,3 +364,4 @@ function getMonsterAttackValue(level) {
 
     return hit > 0 ? hit : 0 ;
 }
+
