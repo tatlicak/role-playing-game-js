@@ -311,11 +311,16 @@ function attack() {
             defeatMonster()
         }
     } 
+
+    if (Math.random() <= .1 && inventory.length !== 1) {
+        text.innerText += " Your "+ inventory.pop() +" breaks.";
+        currentWeapon-- ;
+      }
 }
 
 function isMonsterHit() {
 
-    return Math.random() > 0.2
+    return Math.random() > 0.2 || health < 20 ;
 }
 
 
